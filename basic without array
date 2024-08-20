@@ -1,0 +1,3602 @@
+1. Write a C program to perform input/output of all basic data types.
+
+#include <stdio.h>
+
+int main() {
+    int integer;
+    float floatingPoint;
+    double doublePrecision;
+    char character;
+    short shortInteger;
+
+    printf("Enter an integer: ");
+    scanf("%d", &integer);
+
+    printf("Enter a floating-point number: ");
+    scanf("%f", &floatingPoint);
+
+    printf("Enter a double-precision number: ");
+    scanf("%lf", &doublePrecision);
+
+    printf("Enter a character: ");
+    scanf(" %c", &character);
+
+    printf("Enter a short integer: ");
+    scanf("%hd", &shortInteger);
+
+    printf("\nYou entered:\n");
+    printf("Integer: %d\n", integer);
+    printf("Floating-point number: %.2f\n", floatingPoint);
+    printf("Double-precision number: %.4lf\n", doublePrecision);
+    printf("Character: %c\n", character);
+    printf("Short integer: %hd\n", shortInteger);
+
+    return 0;
+}
+2. Write a C program to enter two numbers and find their sum.
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    sum = num1 + num2;
+
+    printf("The sum of %d and %d is %d\n", num1, num2, sum);
+
+    return 0;
+}
+3. Write a C program to enter two numbers and perform all arithmetic operations.
+#include <stdio.h>
+
+int main() {
+    float num1, num2;
+    float sum, difference, product, quotient;
+    int modulus;
+
+    printf("Enter the first number: ");
+    scanf("%f", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%f", &num2);
+
+    sum = num1 + num2;
+    difference = num1 - num2;
+    product = num1 * num2;
+    quotient = num1 / num2;
+    
+    int int_num1 = (int)num1;
+    int int_num2 = (int)num2;
+    modulus = int_num1 % int_num2;
+
+    printf("\nArithmetic Operations:\n");
+    printf("Sum: %.2f\n", sum);
+    printf("Difference: %.2f\n", difference);
+    printf("Product: %.2f\n", product);
+    printf("Quotient: %.2f\n", quotient);
+    printf("Modulus: %d\n", modulus);
+
+    return 0;
+}
+4. Write a C program to enter length and breadth of a rectangle and find its
+perimeter.
+#include <stdio.h>
+
+int main() {
+    float length, breadth, perimeter;
+
+    printf("Enter the length of the rectangle: ");
+    scanf("%f", &length);
+
+    printf("Enter the breadth of the rectangle: ");
+    scanf("%f", &breadth);
+
+    perimeter = 2 * (length + breadth);
+
+    printf("The perimeter of the rectangle is: %.2f\n", perimeter);
+
+    return 0;
+}
+5. Write a C program to enter length and breadth of a rectangle and find its area.
+#include <stdio.h>
+
+int main() {
+    float length, breadth, area;
+
+    printf("Enter the length of the rectangle: ");
+    scanf("%f", &length);
+
+    printf("Enter the breadth of the rectangle: ");
+    scanf("%f", &breadth);
+
+    area = length * breadth;
+
+    printf("The area of the rectangle is: %.2f\n", area);
+
+    return 0;
+}
+
+6. Write a C program to enter radius of a circle and find its diameter, circumference
+and area.
+#include <stdio.h>
+int main() {
+    float radius, diameter, circumference, area;
+
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    diameter = 2 * radius;
+    circumference = 2 * M_PI * radius;
+    area = M_PI * radius * radius;
+
+    printf("Diameter of the circle: %.2f\n", diameter);
+    printf("Circumference of the circle: %.2f\n", circumference);
+    printf("Area of the circle: %.2f\n", area);
+
+    return 0;
+}
+7. Write a C program to enter length in centimeter and convert it into meter and
+kilometer.
+#include <stdio.h>
+
+int main() {
+    float centimeters, meters, kilometers;
+
+    printf("Enter length in centimeters: ");
+    scanf("%f", &centimeters);
+
+    meters = centimeters / 100;
+    kilometers = centimeters / 100000;
+
+    printf("Length in meters: %.2f\n", meters);
+    printf("Length in kilometers: %.5f\n", kilometers);
+
+    return 0;
+}
+8. Write a C program to enter temperature in Celsius and convert it into Fahrenheit.
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+
+    fahrenheit = (celsius * 9/5) + 32;
+
+    printf("Temperature in Fahrenheit: %.2f\n", fahrenheit);
+
+    return 0;
+}
+9. Write a C program to enter temperature in Fahrenheit and convert to Celsius
+#include <stdio.h>
+
+int main() {
+    float fahrenheit, celsius;
+
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    celsius = (fahrenheit - 32) * 5 / 9;
+
+    printf("Temperature in Celsius: %.2f\n", celsius);
+
+    return 0;
+}
+10.Write a C program to convert days into years, weeks and days.
+#include <stdio.h>
+
+int main() {
+    int days, years, weeks, remainingDays;
+
+    printf("Enter the number of days: ");
+    scanf("%d", &days);
+
+    years = days / 365;
+    weeks = (days % 365) / 7;
+    remainingDays = (days % 365) % 7;
+
+    printf("Equivalent to:\n");
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d\n", remainingDays);
+
+    return 0;
+}
+11. Write a C program to find power of any number x ^ y.
+#include <stdio.h>
+
+int main() {
+    int base, exponent;
+    long long result = 1;
+
+    printf("Enter the base (x): ");
+    scanf("%d", &base);
+
+    printf("Enter the exponent (y): ");
+    scanf("%d", &exponent);
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+
+    printf("%d^%d = %lld\n", base, exponent, result);
+
+    return 0;
+}
+
+12.Write a C program to enter any number and calculate its square root.
+
+#include <stdio.h>
+int main() {
+    double number, squareRoot;
+
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+
+    if (number < 0) {
+        printf("Error: Cannot calculate the square root of a negative number.\n");
+    } else {
+        squareRoot = sqrt(number);
+        printf("The square root of %.2f is %.2f\n", number, squareRoot);
+    }
+
+    return 0;
+}
+13.Write a C program to enter two angles of a triangle and find the third angle.
+
+#include <stdio.h>
+
+int main() {
+    float angle1, angle2, angle3;
+
+    printf("Enter the first angle of the triangle: ");
+    scanf("%f", &angle1);
+
+    printf("Enter the second angle of the triangle: ");
+    scanf("%f", &angle2);
+
+    angle3 = 180.0 - (angle1 + angle2);
+
+    if (angle1 <= 0 || angle2 <= 0 || angle3 <= 0) {
+        printf("Error: The angles must be positive and their sum should be less than 180 degrees.\n");
+    } else {
+        printf("The third angle of the triangle is: %.2f degrees\n", angle3);
+    }
+
+    return 0;
+}
+
+14.Write a C program to enter base and height of a triangle and find its area.
+
+#include <stdio.h>
+
+int main() {
+    float base, height, area;
+
+    printf("Enter the base of the triangle: ");
+    scanf("%f", &base);
+
+    printf("Enter the height of the triangle: ");
+    scanf("%f", &height);
+
+    area = 0.5 * base * height;
+
+    printf("The area of the triangle is: %.2f\n", area);
+
+    return 0;
+}
+15.Write a C program to calculate area of an equilateral triangle.
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float side, area;
+
+    printf("Enter the length of the side of the equilateral triangle: ");
+    scanf("%f", &side);
+
+    area = (sqrt(3) / 4) * side * side;
+
+    printf("The area of the equilateral triangle is: %.2f\n", area);
+
+    return 0;
+}
+16.Write a C program to enter marks of five subjects and calculate total, average
+and percentage.
+#include <stdio.h>
+
+int main() {
+    float marks[5], total = 0.0, average, percentage;
+    int i;
+
+    printf("Enter the marks for five subjects:\n");
+
+    for (i = 0; i < 5; i++) {
+        printf("Subject %d: ", i + 1);
+        scanf("%f", &marks[i]);
+        total += marks[i];
+    }
+
+    average = total / 5;
+    percentage = (total / 500) * 100;
+
+    printf("\nTotal marks: %.2f\n", total);
+    printf("Average marks: %.2f\n", average);
+    printf("Percentage: %.2f%%\n", percentage);
+
+    return 0;
+}
+17.Write a C program to enter P, T, R and calculate Simple Interest.
+#include <stdio.h>
+
+int main() {
+    float principal, time, rate, simpleInterest;
+
+    printf("Enter the principal amount (P): ");
+    scanf("%f", &principal);
+
+    printf("Enter the time period in years (T): ");
+    scanf("%f", &time);
+
+    printf("Enter the rate of interest per annum (R): ");
+    scanf("%f", &rate);
+
+    simpleInterest = (principal * time * rate) / 100;
+
+    printf("Simple Interest: %.2f\n", simpleInterest);
+
+    return 0;
+}
+18.Write a C program to enter P, T, R and calculate Compound Interest.
+#include <stdio.h>
+int main() {
+    float principal, rate, time, compoundInterest;
+
+    printf("Enter the principal amount (P): ");
+    scanf("%f", &principal);
+
+    printf("Enter the time period in years (T): ");
+    scanf("%f", &time);
+
+    printf("Enter the rate of interest per annum (R): ");
+    scanf("%f", &rate);
+
+    compoundInterest = principal * (pow((1 + rate / 100), time)) - principal;
+
+    printf("Compound Interest: %.2f\n", compoundInterest);
+
+    return 0;
+}
+19.Write a C program to find maximum between two numbers.
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    if (num1 > num2) {
+        printf("The maximum number is: %d\n", num1);
+    } else {
+        printf("The maximum number is: %d\n", num2);
+    }
+
+    return 0;
+}
+20.Write a C program to find maximum between three numbers.
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    printf("Enter the third number: ");
+    scanf("%d", &num3);
+
+    if (num1 >= num2 && num1 >= num3) {
+        printf("The maximum number is: %d\n", num1);
+    } else if (num2 >= num1 && num2 >= num3) {
+        printf("The maximum number is: %d\n", num2);
+    } else {
+        printf("The maximum number is: %d\n", num3);
+    }
+
+    return 0;
+}
+21.Write a C program to check whether a number is negative, positive or zero.
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number > 0) {
+        printf("The number is positive.\n");
+    } else if (number < 0) {
+        printf("The number is negative.\n");
+    } else {
+        printf("The number is zero.\n");
+    }
+
+    return 0;
+}
+22.Write a C program to check whether a number is divisible by 5 and 11 or not.
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 5 == 0 && number % 11 == 0) {
+        printf("The number is divisible by both 5 and 11.\n");
+    } else {
+        printf("The number is not divisible by both 5 and 11.\n");
+    }
+
+    return 0;
+}
+23.Write a C program to check whether a number is even or odd.
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("The number is even.\n");
+    } else {
+        printf("The number is odd.\n");
+    }
+
+    return 0;
+}
+24.Write a C program to check whether a year is leap year or not.
+#include <stdio.h>
+
+int main() {
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        printf("%d is a leap year.\n", year);
+    } else {
+        printf("%d is not a leap year.\n", year);
+    }
+
+    return 0;
+}
+25.Write a C program to check whether a character is alphabet or not.
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("%c is an alphabet.\n", ch);
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+
+    return 0;
+}
+26.Write a C program to input any alphabet and check whether it is vowel or
+consonant.
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter an alphabet: ");
+    scanf("%c", &ch);
+
+    ch = tolower(ch);
+
+    if (ch >= 'a' && ch <= 'z') { // Check if the character is an alphabet
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            printf("%c is a vowel.\n", ch);
+        } else {
+            printf("%c is a consonant.\n", ch);
+        }
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+
+    return 0;
+}
+27.Write a C program to input any character and check whether it is alphabet, digit
+or special character.
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("%c is an alphabet.\n", ch);
+    } else if (ch >= '0' && ch <= '9') {
+        printf("%c is a digit.\n", ch);
+    } else {
+        printf("%c is a special character.\n", ch);
+    }
+
+    return 0;
+}
+28.Write a C program to check whether a character is uppercase or lowercase
+alphabet.
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if (ch >= 'A' && ch <= 'Z') {
+        printf("%c is an uppercase alphabet.\n", ch);
+    } else if (ch >= 'a' && ch <= 'z') {
+        printf("%c is a lowercase alphabet.\n", ch);
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+
+    return 0;
+}
+29.Write a C program to input week number and print week day.
+#include <stdio.h>
+
+int main() {
+    int weekNumber;
+
+    printf("Enter week number (1-7): ");
+    scanf("%d", &weekNumber);
+
+    switch (weekNumber) {
+        case 1:
+            printf("Day 1: Sunday\n");
+            break;
+        case 2:
+            printf("Day 2: Monday\n");
+            break;
+        case 3:
+            printf("Day 3: Tuesday\n");
+            break;
+        case 4:
+            printf("Day 4: Wednesday\n");
+            break;
+        case 5:
+            printf("Day 5: Thursday\n");
+            break;
+        case 6:
+            printf("Day 6: Friday\n");
+            break;
+        case 7:
+            printf("Day 7: Saturday\n");
+            break;
+        default:
+            printf("Invalid week number. Please enter a number between 1 and 7.\n");
+            break;
+    }
+
+    return 0;
+}
+30.Write a C program to input month number and print number of days in that
+month.
+#include <stdio.h>
+
+int isLeapYear(int year) {
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    int month, year, days;
+
+    printf("Enter month number (1-12): ");
+    scanf("%d", &month);
+
+    printf("Enter year: ");
+    scanf("%d", &year);
+
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            days = 31;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            days = 30;
+            break;
+        case 2:
+            if (isLeapYear(year)) {
+                days = 29;
+            } else {
+                days = 28;
+            }
+            break;
+        default:
+            printf("Invalid month number. Please enter a number between 1 and 12.\n");
+            return 1;
+    }
+
+    printf("Month %d has %d days.\n", month, days);
+
+    return 0;
+}
+31.Write a C program to count total number of notes in given amount.
+#include <stdio.h>
+
+int main() {
+    int amount;
+    int count100, count50, count20, count10, count5, count1;
+
+    printf("Enter the amount: ");
+    scanf("%d", &amount);
+
+    count100 = amount / 100;
+    amount %= 100;
+
+    count50 = amount / 50;
+    amount %= 50;
+
+    count20 = amount / 20;
+    amount %= 20;
+
+    count10 = amount / 10;
+    amount %= 10;
+
+    count5 = amount / 5;
+    amount %= 5;
+
+    count1 = amount;
+
+    printf("Total number of notes:\n");
+    printf("100: %d\n", count100);
+    printf("50: %d\n", count50);
+    printf("20: %d\n", count20);
+    printf("10: %d\n", count10);
+    printf("5: %d\n", count5);
+    printf("1: %d\n", count1);
+
+    return 0;
+}
+32.Write a C program to input angles of a triangle and check whether triangle is
+valid or not.
+#include <stdio.h>
+
+int main() {
+    float angle1, angle2, angle3;
+
+    printf("Enter the three angles of the triangle:\n");
+    scanf("%f %f %f", &angle1, &angle2, &angle3);
+
+    if (angle1 > 0 && angle2 > 0 && angle3 > 0 && (angle1 + angle2 + angle3) == 180) {
+        printf("The triangle is valid.\n");
+    } else {
+        printf("The triangle is not valid.\n");
+    }
+
+    return 0;
+}
+33.Write a C program to input all sides of a triangle and check whether triangle is
+valid or not.
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3;
+
+    printf("Enter the lengths of the three sides of the triangle:\n");
+    scanf("%f %f %f", &side1, &side2, &side3);
+
+    if (side1 > 0 && side2 > 0 && side3 > 0 &&
+        (side1 + side2 > side3) &&
+        (side2 + side3 > side1) &&
+        (side1 + side3 > side2)) {
+        printf("The triangle is valid.\n");
+    } else {
+        printf("The triangle is not valid.\n");
+    }
+
+    return 0;
+}
+34.Write a C program to check whether the triangle is equilateral, isosceles or
+scalene triangle.
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3;
+
+    printf("Enter the lengths of the three sides of the triangle:\n");
+    scanf("%f %f %f", &side1, &side2, &side3);
+
+    if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+        printf("Sides must be positive numbers.\n");
+    } else if (side1 == side2 && side2 == side3) {
+        printf("The triangle is equilateral.\n");
+    } else if (side1 == side2 || side2 == side3 || side1 == side3) {
+        printf("The triangle is isosceles.\n");
+    } else {
+        printf("The triangle is scalene.\n");
+    }
+
+    return 0;
+}
+35.Write a C program to find all roots of a quadratic equation.
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c;
+    float discriminant, root1, root2;
+
+    printf("Enter coefficients a, b, and c of the quadratic equation (ax^2 + bx + c = 0):\n");
+    scanf("%f %f %f", &a, &b, &c);
+    discriminant = b * b - 4 * a * c;
+    if (a == 0) {
+        printf("The coefficient 'a' cannot be zero for a quadratic equation.\n");
+    } else if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("The roots are: %.2f and %.2f\n", root1, root2);
+    } else if (discriminant == 0) {
+        root1 = -b / (2 * a);
+        printf("The root is: %.2f\n", root1);
+    } else {
+        float realPart = -b / (2 * a);
+        float imaginaryPart = sqrt(-discriminant) / (2 * a);
+        printf("The roots are: %.2f + %.2fi and %.2f - %.2fi\n", realPart, imaginaryPart, realPart, imaginaryPart);
+    }
+
+    return 0;
+}
+36.Write a C program to calculate profit or loss.
+#include <stdio.h>
+
+int main() {
+    float costPrice, sellingPrice, profit, loss;
+
+    printf("Enter the cost price of the item: ");
+    scanf("%f", &costPrice);
+
+    printf("Enter the selling price of the item: ");
+    scanf("%f", &sellingPrice);
+
+    if (sellingPrice > costPrice) {
+        profit = sellingPrice - costPrice;
+        printf("Profit: %.2f\n", profit);
+    } else if (sellingPrice < costPrice) {
+        loss = costPrice - sellingPrice;
+        printf("Loss: %.2f\n", loss);
+    } else {
+        printf("No profit, no loss.\n");
+    }
+
+    return 0;
+}
+37.Write a C program to input marks of five subjects Physics, Chemistry, Biology,
+Mathematics and Computer. Calculate percentage and grade according to
+following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+#include <stdio.h>
+
+int main() {
+    float physics, chemistry, biology, mathematics, computer;
+    float total, percentage;
+    char grade;
+
+    printf("Enter marks for Physics: ");
+    scanf("%f", &physics);
+
+    printf("Enter marks for Chemistry: ");
+    scanf("%f", &chemistry);
+
+    printf("Enter marks for Biology: ");
+    scanf("%f", &biology);
+
+    printf("Enter marks for Mathematics: ");
+    scanf("%f", &mathematics);
+
+    printf("Enter marks for Computer: ");
+    scanf("%f", &computer);
+
+    total = physics + chemistry + biology + mathematics + computer;
+    percentage = (total / 500) * 100;
+
+    if (percentage >= 90) {
+        grade = 'A';
+    } else if (percentage >= 80) {
+        grade = 'B';
+    } else if (percentage >= 70) {
+        grade = 'C';
+    } else if (percentage >= 60) {
+        grade = 'D';
+    } else if (percentage >= 40) {
+        grade = 'E';
+    } else {
+        grade = 'F';
+    }
+
+    printf("Total Marks: %.2f\n", total);
+    printf("Percentage: %.2f%%\n", percentage);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
+38.Write a C program to input basic salary of an employee and calculate its Gross
+salary according to following:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+#include <stdio.h>
+
+int main() {
+    float basicSalary, hra, da, grossSalary;
+    printf("Enter the basic salary of the employee: ");
+    scanf("%f", &basicSalary);
+
+    if (basicSalary <= 10000) {
+        hra = basicSalary * 0.20;
+        da = basicSalary * 0.80;
+    } else if (basicSalary <= 20000) {
+        hra = basicSalary * 0.25;
+        da = basicSalary * 0.90;
+    } else {
+        hra = basicSalary * 0.30;
+        da = basicSalary * 0.95;
+    }
+
+    grossSalary = basicSalary + hra + da;
+
+    printf("Basic Salary: %.2f\n", basicSalary);
+    printf("HRA: %.2f\n", hra);
+    printf("DA: %.2f\n", da);
+    printf("Gross Salary: %.2f\n", grossSalary);
+
+    return 0;
+}
+39.Write a C program to input electricity unit charges and calculate total electricity
+bill according to the given condition:
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill
+#include <stdio.h>
+
+int main() {
+    float units, bill = 0.0, surcharge;
+    printf("Enter the number of electricity units: ");
+    scanf("%f", &units);
+
+    if (units <= 50) {
+        bill = units * 0.50;
+    } else if (units <= 150) {
+        bill = 50 * 0.50 + (units - 50) * 0.75;
+    } else if (units <= 250) {
+        bill = 50 * 0.50 + 100 * 0.75 + (units - 150) * 1.20;
+    } else {
+        bill = 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + (units - 250) * 1.50;
+    }
+    surcharge = 0.20 * bill;
+    bill += surcharge;
+    printf("Total electricity bill including surcharge: Rs. %.2f\n", bill);
+
+    return 0;
+}
+40.Write a C program to print day of week name using switch case.
+#include <stdio.h>
+
+int main() {
+    int day;
+    printf("Enter a number (1-7) to get the day of the week: ");
+    scanf("%d", &day);
+
+    switch(day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        case 4:
+            printf("Thursday\n");
+            break;
+        case 5:
+            printf("Friday\n");
+            break;
+        case 6:
+            printf("Saturday\n");
+            break;
+        case 7:
+            printf("Sunday\n");
+            break;
+        default:
+            printf("Invalid input! Please enter a number between 1 and 7.\n");
+            break;
+    }
+
+    return 0;
+}
+41.Write a C program print total number of days in a month using switch case.
+#include <stdio.h>
+
+int main() {
+    int month;
+    printf("Enter the month number (1-12): ");
+    scanf("%d", &month);
+    switch(month) {
+        case 1:  
+        case 3:  
+        case 5:  
+        case 7:  
+        case 8:  
+        case 10: 
+        case 12: 
+            printf("31 days\n");
+            break;
+        case 4:  
+        case 6:  
+        case 9:  
+        case 11: 
+            printf("30 days\n");
+            break;
+        case 2:  
+            printf("28 or 29 days\n");
+            break;
+        default:
+            printf("Invalid month number! Please enter a number between 1 and 12.\n");
+            break;
+    }
+
+    return 0;
+}
+42.Write a C program to check whether an alphabet is vowel or consonant using
+switch case.
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter an alphabet: ");
+    scanf(" %c", &ch);
+    ch = tolower(ch);
+    switch(ch) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            printf("The character '%c' is a vowel.\n", ch);
+            break;
+        default:            if ((ch >= 'a' && ch <= 'z')) {
+                printf("The character '%c' is a consonant.\n", ch);
+            } else {
+                printf("'%c' is not an alphabet.\n", ch);
+            }
+            break;
+    }
+
+    return 0;
+}
+43.Write a C program to find maximum between two numbers using switch case.
+
+#include <stdio.h>
+
+int main() {
+    int a, b, result;
+
+    printf("Enter two numbers:\n");
+    printf("Number 1: ");
+    scanf("%d", &a);
+    printf("Number 2: ");
+    scanf("%d", &b);
+
+    if (a > b) {
+        result = 1;
+    } else if (a < b) {
+        result = 2;
+    } else {
+        result = 0;
+    }
+
+    switch(result) {
+        case 1:
+            printf("The maximum number is: %d\n", a);
+            break;
+        case 2:
+            printf("The maximum number is: %d\n", b);
+            break;
+        case 0:
+            printf("Both numbers are equal.\n");
+            break;
+        default:
+            printf("Unexpected error.\n");
+            break;
+    }
+
+    return 0;
+}
+44.Write a C program to check whether a number is even or odd using switch case.
+#include <stdio.h>
+
+int main() {
+    int number, remainder;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    remainder = number % 2;
+
+    switch(remainder) {
+        case 0:
+            printf("The number %d is even.\n", number);
+            break;
+        case 1:
+            printf("The number %d is odd.\n", number);
+            break;
+        default:
+            printf("Unexpected error.\n");
+            break;
+    }
+
+    return 0;
+}
+45.Write a C program to check whether a number is positive, negative or zero using
+switch case.
+#include <stdio.h>
+
+int main() {
+    int number, category;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number > 0) {
+        category = 1;
+    } else if (number < 0) {
+        category = -1;
+    } else {
+        category = 0;
+    }
+
+    switch(category) {
+        case 1:
+            printf("The number %d is positive.\n", number);
+            break;
+        case -1:
+            printf("The number %d is negative.\n", number);
+            break;
+        case 0:
+            printf("The number %d is zero.\n", number);
+            break;
+        default:
+            printf("Unexpected error.\n");
+            break;
+    }
+
+    return 0;
+}
+46.Write a C program to find roots of a quadratic equation using switch case.
+#include <stdio.h>
+int main() {
+    float a, b, c;
+    float discriminant, root1, root2;
+
+    printf("Enter coefficients a, b, and c for the quadratic equation ax^2 + bx + c = 0:\n");
+    printf("a: ");
+    scanf("%f", &a);
+    printf("b: ");
+    scanf("%f", &b);
+    printf("c: ");
+    scanf("%f", &c);
+    discriminant = b * b - 4 * a * c;
+    switch((discriminant > 0) - (discriminant < 0)) {
+        case 1:  
+            root1 = (-b + sqrt(discriminant)) / (2 * a);
+            root2 = (-b - sqrt(discriminant)) / (2 * a);
+            printf("The equation has two distinct real roots:\n");
+            printf("Root 1 = %.2f\n", root1);
+            printf("Root 2 = %.2f\n", root2);
+            break;
+        case 0:  
+            root1 = -b / (2 * a);
+            printf("The equation has one real root:\n");
+            printf("Root = %.2f\n", root1);
+            break;
+        case -1:
+            printf("The equation has two complex roots.\n");
+            break;
+        default:
+            printf("Unexpected error.\n");
+            break;
+    }
+
+    return 0;
+}
+47.Write a C program to create Simple Calculator using switch case.
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);
+
+    printf("Enter two numbers:\n");
+    printf("Number 1: ");
+    scanf("%lf", &num1);
+    printf("Number 2: ");
+    scanf("%lf", &num2);
+
+    switch(operator) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("Result: %.2lf\n", result);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("Error: Invalid operator.\n");
+            break;
+    }
+
+    return 0;
+}
+48.Write a C program to print all natural numbers from 1 to n. - using while loop
+#include <stdio.h>
+
+int main() {
+    int n, i = 1;
+
+    printf("Enter a natural number n: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("Please enter a positive natural number.\n");
+        return 1;
+    }
+    while (i <= n) {
+        printf("%d ", i);
+        i++;
+    }
+
+    printf("\n");
+
+    return 0;
+}
+49.Write a C program to print all natural numbers in reverse (from n to 1). - using
+while loop
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter a natural number n: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("Please enter a positive natural number.\n");
+        return 1;
+    }
+    while (n >= 1) {
+        printf("%d ", n);
+        n--;
+    }
+
+    printf("\n");
+
+    return 0;
+}
+50.Write a C program to print all alphabets from a to z. - using while loop
+#include <stdio.h>
+
+int main() {
+    char ch = 'a';
+    while (ch <= 'z') {
+        printf("%c ", ch);
+        ch++;
+    }
+
+    printf("\n");
+
+    return 0;
+}
+51.Write a C program to print all even numbers between 1 to 100. - using while loop
+#include <stdio.h>
+
+int main() {
+    int num = 2;
+    while (num <= 100) {
+        printf("%d ", num);
+        num += 2;
+    }
+
+    printf("\n");
+
+    return 0;
+}
+52.Write a C program to print all odd number between 1 to 100.
+#include <stdio.h>
+
+int main() {
+    int num = 1;
+    while (num <= 100) {
+        printf("%d ", num);
+        num += 2;
+    }
+
+    printf("\n");
+
+    return 0;
+}
+53.Write a C program to find sum of all natural numbers between 1 to n.
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0, i = 1;
+
+    printf("Enter a natural number n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a positive natural number.\n");
+        return 1;
+    }
+    while (i <= n) {
+        sum += i;
+        i++;
+    }
+
+    printf("The sum of all natural numbers from 1 to %d is %d.\n", n, sum);
+
+    return 0;
+}
+54.Write a C program to find sum of all even numbers between 1 to n.
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0, i = 2;
+
+    printf("Enter a natural number n: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("Please enter a positive natural number.\n");
+        return 1;
+    }
+
+    while (i <= n) {
+        sum += i;
+        i += 2;
+    }
+
+    printf("The sum of all even numbers from 1 to %d is %d.\n", n, sum);
+
+    return 0;
+}
+55.Write a C program to find sum of all odd numbers between 1 to n.
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0, i = 1;
+
+    printf("Enter a natural number n: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("Please enter a positive natural number.\n");
+        return 1;
+    }
+    while (i <= n) {
+        sum += i;
+        i += 2;
+    }
+
+    printf("The sum of all odd numbers from 1 to %d is %d.\n", n, sum);
+
+    return 0;
+}
+56.Write a C program to print multiplication table of any number.
+#include <stdio.h>
+
+int main() {
+    int number, i;
+
+    printf("Enter a number to print its multiplication table: ");
+    scanf("%d", &number);
+
+    printf("Multiplication table of %d:\n", number);
+    for (i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", number, i, number * i);
+    }
+
+    return 0;
+}
+57.Write a C program to count number of digits in a number.
+#include <stdio.h>
+
+int main() {
+    int number, count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number == 0) {
+        count = 1;
+    } else {
+        if (number < 0) {
+            number = -number;
+        }
+        while (number > 0) {
+            count++;
+            number /= 10;
+        }
+    }
+
+    printf("The number of digits is: %d\n", count);
+
+    return 0;
+}
+
+58.Write a C program to find first and last digit of a number.
+#include <stdio.h>
+
+int main() {
+    int number, firstDigit, lastDigit;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number == 0) {
+        printf("The first and last digit of 0 is 0.\n");
+        return 0;
+    }
+    int originalNumber = number;
+    if (number < 0) {
+        number = -number;
+    }
+    lastDigit = number % 10;
+    while (number >= 10) {
+        number /= 10;
+    }
+    firstDigit = number;
+
+    printf("First digit: %d\n", firstDigit);
+    printf("Last digit: %d\n", lastDigit);
+
+    return 0;
+}
+59.Write a C program to find sum of first and last digit of a number.
+#include <stdio.h>
+
+int main() {
+    int number, firstDigit, lastDigit, sum;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number == 0) {
+        printf("The sum of the first and last digit of 0 is 0.\n");
+        return 0;
+    }
+
+    int originalNumber = number;
+    if (number < 0) {
+        number = -number;
+    }
+
+    lastDigit = number % 10;
+
+    while (number >= 10) {
+        number /= 10;
+    }
+    firstDigit = number;
+
+    sum = firstDigit + lastDigit;
+
+    printf("First digit: %d\n", firstDigit);
+    printf("Last digit: %d\n", lastDigit);
+    printf("Sum of first and last digit: %d\n", sum);
+
+    return 0;
+}
+60.Write a C program to swap first and last digits of a number.
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int number, originalNumber, firstDigit, lastDigit, numDigits, newNumber;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number < 0) {
+        printf("Negative numbers are not supported.\n");
+        return 1;
+    }
+
+    originalNumber = number;
+
+    lastDigit = number % 10;
+    numDigits = (int)log10(number);
+    firstDigit = number / pow(10, numDigits);
+
+    number = number % (int)pow(10, numDigits);
+    number = number / 10;
+
+    newNumber = lastDigit * pow(10, numDigits) + number * 10 + firstDigit;
+
+    printf("Original number: %d\n", originalNumber);
+    printf("Number after swapping first and last digits: %d\n", newNumber);
+
+    return 0;
+}
+61.Write a C program to calculate sum of digits of a number.
+#include <stdio.h>
+
+int main() {
+    int number, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number < 0) {
+        number = -number;
+    }
+    while (number > 0) {
+        sum += number % 10;
+        number /= 10;
+    }
+
+    printf("Sum of the digits: %d\n", sum);
+
+    return 0;
+}
+62.Write a C program to calculate product of digits of a number.
+#include <stdio.h>
+
+int main() {
+    int number, product = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number < 0) {
+        number = -number;
+    }
+    if (number == 0) {
+        product = 0;
+    } else {       
+ while (number > 0) {
+            product *= number % 10;
+            number /= 10;
+        }
+    }
+
+    printf("Product of the digits: %d\n", product);
+
+    return 0;
+}
+63.Write a C program to enter a number and print its reverse.
+#include <stdio.h>
+
+int main() {
+    int number, reversed = 0, originalNumber, digit;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    originalNumber = number;
+    if (number < 0) {
+        number = -number;
+    }
+    while (number > 0) {
+        digit = number % 10;
+        reversed = reversed * 10 + digit;
+        number /= 10;
+    }
+    if (originalNumber < 0) {
+        reversed = -reversed;
+    }
+    
+    printf("Reversed number: %d\n", reversed);
+
+    return 0;
+}
+64.Write a C program to check whether a number is palindrome or not.
+#include <stdio.h>
+
+int main() {
+    int number, originalNumber, reversed = 0, digit;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    originalNumber = number;
+    if (number < 0) {
+        printf("Negative numbers are not palindromes.\n");
+        return 0;
+    }
+    while (number > 0) {
+        digit = number % 10;
+        reversed = reversed * 10 + digit;
+        number /= 10;
+    }
+    if (originalNumber == reversed) {
+        printf("%d is a palindrome.\n", originalNumber);
+    } else {
+        printf("%d is not a palindrome.\n", originalNumber);
+    }
+
+    return 0;
+}
+65.Write a C program to find frequency of each digit in a given integer.
+#include <stdio.h>
+
+int main() {
+    int number, digit;
+    int frequency[10] = {0}; // Array to store frequency of each digit
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    if (number < 0) {
+        number = -number;
+    }
+    while (number > 0) {
+        digit = number % 10;     
+        frequency[digit]++; 
+        number /= 10;          
+    }
+    printf("Digit frequencies:\n");
+    for (digit = 0; digit < 10; digit++) {
+        if (frequency[digit] > 0) {
+            printf("Digit %d: %d times\n", digit, frequency[digit]);
+        }
+    }
+
+    return 0;
+}
+66.Write a C program to enter a number and print it in words.
+#include <stdio.h>
+
+int main()
+{
+    int n, num = 0;
+    printf("Enter any number to print in words: ");
+    scanf("%d", &n);
+    while(n != 0)
+    {
+        num = (num * 10) + (n % 10);
+        n /= 10;
+    }
+    while(num != 0)
+    {
+        switch(num % 10)
+        {
+            case 0: 
+                printf("Zero ");
+                break;
+            case 1: 
+                printf("One ");
+                break;
+            case 2: 
+                printf("Two ");
+                break;
+            case 3: 
+                printf("Three ");
+                break;
+            case 4: 
+                printf("Four ");
+                break;
+            case 5: 
+                printf("Five ");
+                break;
+            case 6: 
+                printf("Six ");
+                break;
+            case 7: 
+                printf("Seven ");
+                break;
+            case 8: 
+                printf("Eight ");
+                break;
+            case 9: 
+                printf("Nine ");
+                break;
+        }
+        
+        num = num / 10;
+    }
+
+    return 0;
+}
+
+67.Write a C program to print all ASCII character with their values.
+#include <stdio.h>
+
+int main() {
+    printf("ASCII Characters and Their Values:\n”):
+
+    for (int i = 0; i < 128; i++) {
+        printf("ASCII: %c\n", i, i);
+    }
+
+    return 0;
+}
+68.Write a C program to find power of a number using for loop.
+#include <stdio.h>
+
+int main() {
+    int base, exponent;
+    long long result = 1;
+
+    printf("Enter base: ");
+    scanf("%d", &base);
+
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+    if (exponent < 0) {
+        printf("Exponent should be a non-negative integer.\n");
+        return 1;
+    }
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+
+    printf("%d^%d = %lld\n", base, exponent, result);
+
+    return 0;
+}
+69.Write a C program to find all factors of a number.
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    printf("Factors of %d are:\n", number);
+    for (int i = 1; i <= number; i++) {
+        if (number % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    
+    printf("\n");
+
+    return 0;
+}
+
+70.Write a C program to calculate factorial of a number.
+#include <stdio.h>
+long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    if (number < 0) {
+        printf("Factorial of a negative number doesn't exist.\n");
+        return 1;
+    }
+    long long result = factorial(number);
+
+    printf("Factorial of %d is %lld\n", number, result);
+
+    return 0;
+}
+
+71.Write a C program to find HCF (GCD) of two numbers.
+#include <stdio.h>
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if (num1 <= 0 || num2 <= 0) {
+        printf("Both numbers must be positive integers.\n");
+        return 1;
+    }
+
+    int result = gcd(num1, num2);
+    printf("The GCD of %d and %d is %d\n", num1, num2, result);
+
+    return 0;
+}
+72.Write a C program to find LCM of two numbers.
+#include <stdio.h>
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if (num1 <= 0 || num2 <= 0) {
+        printf("Both numbers must be positive integers.\n");
+        return 1;
+    }
+
+    int result = lcm(num1, num2);
+    printf("The LCM of %d and %d is %d\n", num1, num2, result);
+
+    return 0;
+}
+73.Write a C program to check whether a number is Prime number or not.
+#include <stdio.h>
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    if (num == 2) {
+        return true;  
+    }
+    if (num % 2 == 0) {
+        return false;  
+    }
+  
+    for (int i = 3; i * i <= num; i += 2) {
+        if (num % i == 0) {
+            return false; }
+    }
+    return true;
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (isPrime(number)) {
+        printf("%d is a prime number.\n", number);
+    } else {
+        printf("%d is not a prime number.\n", number);
+    }
+
+    return 0;
+}
+74.Write a C program to print all Prime numbers between 1 to n.
+#include <stdio.h>
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    if (num == 2) {
+        return true; 
+    }
+    if (num % 2 == 0) {
+        return false; 
+    }    for (int i = 3; i * i <= num; i += 2) {
+        if (num % i == 0) {
+            return false; 
+        }
+    }
+    return true; 
+}
+
+int main() {
+    int n;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a number greater than or equal to 1.\n");
+        return 1;
+    }
+
+    printf("Prime numbers between 1 and %d are:\n", n);
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            printf("%d ", i);
+        }
+    }
+    
+    printf("\n");
+
+    return 0;
+}
+75.Write a C program to find sum of all prime numbers between 1 to n.
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    if (num == 2) {
+        return true;
+    }
+    if (num % 2 == 0) {
+        return false;
+    }
+    for (int i = 3; i * i <= num; i += 2) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    int sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a number greater than or equal to 1.\n");
+        return 1;
+    }
+
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            sum += i;
+        }
+    }
+
+    printf("The sum of all prime numbers between 1 and %d is %d\n", n, sum);
+
+    return 0;
+}
+76.Write a C program to find all prime factors of a number.
+#include <stdio.h>
+
+void printPrimeFactors(int num) {
+    while (num % 2 == 0) {
+        printf("2 ");
+        num /= 2;
+    }
+
+    for (int i = 3; i * i <= num; i += 2) {
+        while (num % i == 0) {
+            printf("%d ", i);
+            num /= i;
+        }
+    }
+
+    if (num > 2) {
+        printf("%d", num);
+    }
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    printf("Prime factors of %d are: ", number);
+    printPrimeFactors(number);
+
+    printf("\n");
+
+    return 0;
+}
+77.Write a C program to check whether a number is Armstrong number or not.
+#include <stdio.h>
+int countDigits(int num) {
+    int count = 0;
+    while (num != 0) {
+        count++;
+        num /= 10;
+    }
+    return count;
+}
+int isArmstrong(int num) {
+    int originalNum = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num != 0) {
+        int digit = num % 10;
+        sum += pow(digit, digits);
+        num /= 10;
+    }
+
+    return sum == originalNum;
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+
+    if (isArmstrong(number)) {
+        printf("%d is an Armstrong number.\n", number);
+    } else {
+        printf("%d is not an Armstrong number.\n", number);
+    }
+
+    return 0;
+}
+78.Write a C program to print all Armstrong numbers between 1 to n.
+#include <stdio.h>
+int countDigits(int num) {
+    int count = 0;
+    while (num != 0) {
+        count++;
+        num /= 10;
+    }
+    return count;
+}
+
+int isArmstrong(int num) {
+    int originalNum = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num != 0) {
+        int digit = num % 10;
+        sum += pow(digit, digits);
+        num /= 10;
+    }
+
+    return sum == originalNum;
+}
+
+int main() {
+    int n;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a number greater than or equal to 1.\n");
+        return 1;
+    }
+
+    printf("Armstrong numbers between 1 and %d are:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        if (isArmstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}
+79.Write a C program to check whether a number is Perfect number or not.
+#include <stdio.h>
+int isPerfect(int num) {
+    int sum = 0;
+    
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    return sum == num;
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    if (isPerfect(number)) {
+        printf("%d is a perfect number.\n", number);
+    } else {
+        printf("%d is not a perfect number.\n", number);
+    }
+
+    return 0;
+}
+80.Write a C program to print all Perfect numbers between 1 to n.
+#include <stdio.h>
+int isPerfect(int num) {
+    int sum = 0;
+        for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    return sum == num;
+}
+
+int main() {
+    int n;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a number greater than or equal to 1.\n");
+        return 1;
+    }
+
+    printf("Perfect numbers between 1 and %d are:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        if (isPerfect(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}
+81.Write a C program to check whether a number is Strong number or not.
+#include <stdio.h>
+int factorial(int num) {
+    int result = 1;
+    for (int i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+int isStrongNumber(int num) {
+    int originalNum = num;
+    int sum = 0;
+    while (num != 0) {
+        int digit = num % 10;
+        sum += factorial(digit);
+        num /= 10;
+    }
+
+    return sum == originalNum;
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+
+    if (isStrongNumber(number)) {
+        printf("%d is a strong number.\n", number);
+    } else {
+        printf("%d is not a strong number.\n", number);
+    }
+
+    return 0;
+}
+82.Write a C program to print all Strong numbers between 1 to n.
+#include <stdio.h>
+int factorial(int num) {
+    int result = 1;
+    for (int i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+int isStrongNumber(int num) {
+    int originalNum = num;
+    int sum = 0;
+    while (num != 0) {
+        int digit = num % 10;
+        sum += factorial(digit);
+        num /= 10;
+    }
+
+    return sum == originalNum;
+}
+
+int main() {
+    int n;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a number greater than or equal to 1.\n");
+        return 1;
+    }
+
+    printf("Strong numbers between 1 and %d are:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        if (isStrongNumber(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}
+83.Write a C program to print Fibonacci series up to n terms.
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+    int first = 0, second = 1, next;
+
+    printf("Fibonacci series up to %d terms:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            printf("%d ", first);
+            continue;
+        }
+        if (i == 2) {
+            printf("%d ", second);
+            continue;
+        }
+        next = first + second;
+        first = second;
+        second = next;
+        printf("%d ", next);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+https://www.techgeekbuzz.com/blog/pattern-programs-in-c/
+1	Solid Rectangular Star Pattern in C
+#include <stdio.h>
+
+int main()
+{
+
+int rows, columns,i,j;
+
+printf("Enter the number of rows : ");
+scanf("%d", &rows);
+
+printf("Enter the number of columns : ");
+scanf("%d", &columns);
+
+printf("\n");
+
+/* print solid rectangle*/
+
+for (i = 1; i <= rows; i++)
+{
+      for (j = 1; j <= columns; j++)
+       {
+             printf("*");
+       }
+      printf("\n");
+}
+return 0;
+}
+
+2. Hollow Rectangular Star Pattern in C
+#include <stdio.h>
+int main()
+{
+int rows, columns,i, j;
+
+printf("Enter the number of rows : ");
+scanf("%d", &rows);
+printf("Enter the number of columns : ");
+scanf("%d", &columns);
+
+printf("\n");
+for (i = 1; i <= rows; i++)
+
+{
+	for (j = 1; j <= columns; j++)
+	{	
+    	if (i==1 || i==rows || j==1 || j==columns)
+			printf("*");
+		else
+			printf(" ");
+	}
+	printf("\n");
+}
+return 0;
+}
+3. Half Pyramid Star Pattern in C
+#include <stdio.h>
+
+int main()
+{
+int height,i, j;;
+
+printf("Enter the height of the pyramid : ");
+scanf("%d", &height);    //height of the pyramid
+for (i = 1; i <= height; i++)
+
+{
+	for (j = 1; j <= i; j++)
+	{	
+    	    printf("*");
+	}
+	printf("\n");
+}
+
+return 0;
+}
+4. Inverted Half Pyramid Pattern in C
+#include <stdio.h>
+
+int main()
+{
+
+int height,i, j;;
+
+printf("Enter the height of the pyramid : ");
+
+scanf("%d", &height);   //height of the pyramid
+
+for (i = height; i >= 1; i--)
+
+{
+	for (j = 1 ; j <= i; j++)
+	{	
+         	printf("*");
+	}
+	printf("\n");
+}
+
+return 0;
+}
+5. Full Pyramid Star Pattern in C
+#include <stdio.h>   
+int main()  
+{  
+    int height,space,i,j,k;  
+    printf("Enter the height of the triangle: ");  
+    scanf("%d",&height);  
+    space=height;  
+   for( i=1;i<=height;i++)  
+   {  
+       for( j=1;j<space-1;j++)  
+       {  
+           printf(" ");  
+       }  
+       for( k=1;k<=2*i-1;k++)  
+       {  
+         printf("*");  
+       }  
+       space--;  
+     
+      printf("\n");  
+    }  
+    return 0;  
+}
+
+6. Hollow Pyramid Star Pattern
+#include<stdio.h>
+  
+int main()  
+{  
+    int height,space,i,j,k;  
+    printf("Height of Pyramid: ");  
+    scanf("%d",&height);  
+    space=height;  
+   for( i=1;i<=height;i++)  
+   {  
+       for( j=1;j<=space-1;j++)  
+       {  
+           printf(" ");  
+       }  
+       for( k=1;k<=2*i-1;k++)  
+       {  
+          if(k==1 || k==2*i-1 || i==height)  
+         printf("*");  
+         else  
+         printf(" ");  
+       }  
+       space--;  
+     
+      printf("\n");  
+    }  
+    return 0;  
+}
+7. Inverted Hollow Half Pyramid in C
+#include<stdio.h>   
+  
+int main()  
+{  
+    int height,i,j;  
+    printf("Enter the height of Pyramid: ");  
+    scanf("%d",&height);  
+    for(i=height;i>=1;i--)  
+    {  
+      for( j=1;j<=i;j++)  
+      {  
+         if(j==1 || j==i || i==height)  
+          printf("*");  
+          else  
+          printf(" ");  
+      }  
+      printf("\n");  
+    }  
+    return 0;  
+}
+8. Full Hollow Inverted Pyramid in C
+#include <stdio.h>  
+  
+int main()  
+{  
+    int height,space=1,i,j,k;  
+    printf("Enter the height of pyramid: ");  
+    scanf("%d",&height);  
+  
+   for( i=height;i>=1;i--)  
+   {  
+       for( j=1;j<space;j++)  
+       {  
+           printf(" ");  
+       }  
+       for( k=1;k<=2*i-1;k++)  
+       {  
+          if(k==1 || k==2*i-1 || i==height)  
+           printf("*");  
+           else  
+           printf(" ");  
+       }  
+       space++;  
+     
+      printf("\n");  
+    }  
+    return 0;  
+}
+9. Half Diamond Star Pattern in C
+#include<stdio.h>
+  
+int main()  
+{  
+    int max_width,i,j;  
+    printf("Enter the width of diamond: ");  
+    scanf("%d",&max_width);  
+    for( i=1;i<=max_width;i++)  
+    {  
+      for( j=1;j<=i;j++)
+      {
+          printf("*");
+      }
+      printf("\n"); 
+     } 
+
+    for( i=max_width-1;i>=1;i--){
+       for( j=1;j<=i;j++){
+           printf("*");  
+            }  
+       printf("\n");  
+    }     
+    return 0;  
+}
+10. Solid Full Diamond Pattern in C
+#include<stdio.h>  
+int main(void) {  
+  int width, space, stars, i, j, k;  
+  printf("Enter the width of diamonds: ");  
+  scanf("%d",&width);  
+  space=width-1;  
+   stars=1;  
+  for( i=1;i<=width;i++)  
+  {  
+    for( j=1;j<=space;j++)  
+    {  
+      printf(" ");  
+    }  
+    for( k=1;k<=stars;k++) { printf("*"); } if(space>i)  
+    {  
+      space=space-1;  
+      stars=stars+2;  
+    }  
+    if(space<i)  
+    {  
+      space=space+1;  
+      stars=stars-2;  
+    }  
+    printf("\n");  
+  }  
+  return 0;}
+
+11. Right Arrow Star Pattern in C
+#include<stdio.h>  
+  
+int main(void) {  
+    
+  int width,i,j,k;  
+  printf("Enter the width of arrow: ");  
+  scanf("%d",&width);  
+   for( i=0;i<width;i++)  
+ {  
+   for( j=0;j<i;j++)  
+   {  
+       printf(" ");  
+   }  
+   for( k=1;k<=width-i;k++)  
+   {  
+     printf("*");  
+   }  
+   printf("\n");  
+ }  
+ 
+for( i=1;i<width;i++)  
+{  
+  for( j=1;j<width-i;j++)  
+  {  
+    printf(" ");  
+  }  
+  for( k=1;k<=i+1;k++)  
+  {  
+    printf("*");  
+  }  
+  printf("\n");  
+}  
+  return 0;  
+}
+12. Left Arrow Star Pattern in C
+#include<stdio.h> 
+  
+int main(void) {  
+    
+  int width,i,j,k;  
+  printf("Enter the width of arrow: ");  
+  scanf("%d",&width);  
+ for( i=1;i<=width;i++)  
+ {  
+   for( j=1;j<=width-i;j++)  
+   {  
+       printf(" ");  
+   }  
+   for( k=0;k<=width-i;k++)  
+   {  
+     printf("*");  
+   }  
+   printf("\n");  
+ }  
+for( i=1;i<width;i++)  
+{  
+  for( j=1;j<i+1;j++)  
+  {  
+    printf(" ");  
+  }  
+  for( k=1;k<=i+1;k++)  
+  {  
+    printf("*");  
+  }  
+  printf("\n");  
+}  
+  return 0;  
+}
+13. Plus Star Pattern in C
+#include<stdio.h>  
+  
+int main() {  
+  int height,i,j;  
+  printf("Enter the height (odd): ");  
+  scanf("%d", &height);  
+  for( i=1;i<=height;i++)  
+  {  
+    if(i==((height/2)+1))  
+    {  
+      for( j=1;j<=height;j++)  
+      {  
+        printf("+");  
+      }  
+   
+    }  
+    else  
+    {  
+    for( j=1;j<=height/2;j++)  
+    {  
+      printf(" ");  
+    }  
+    printf("+");  
+    }  
+    printf("\n");  
+  }  
+  return 0;  
+}
+14. X Pattern in C
+#include<stdio.h> 
+  
+int main() {  
+  int width,space, i,j;  
+  printf("Enter the width: ");  
+  scanf("%d",&width);  
+  space=2*width-1;  
+  for( i=1;i<=space;i++)  
+  {  
+    for( j=1;j<=space;j++)  
+    {  
+       if(i==j || j==(space-i+1))  
+       {  
+         printf("*");  
+       }  
+       else  
+       {  
+         printf(" ");  
+       }  
+    }  
+    printf("\n");  
+  }  
+  return 0;  
+}
+15. The Diagonal Hollow Square Pattern in C
+#include<stdio.h> 
+int main()  
+{  
+    int rows, i, j;  
+    printf("Enter rows: ");  
+    scanf("%d",&rows);  
+    for( i=1;i<=rows;i++)  
+    {  
+        for( j=1;j<=rows;j++)  
+        {  
+            if(i==1 ||i==rows||j==1||j==rows-i+1||i==j||j==rows)  
+            {  
+            printf("*");  
+            }  
+            else  
+            {  
+                     printf(" ");  
+         
+         }                  
+            }        
+        printf("\n");  
+    }  
+      
+    return 0;  
+}
+16. Solid Rhombus Star Pattern in C
+#include<stdio.h>
+  
+int main()  
+{  
+    int rows, i,j,k;  
+    printf("Enter rows: ");  
+    scanf("%d",&rows);  
+    for( i=rows;i>=1;i--)  
+    {  
+        for( j=1;j<=i-1;j++)  
+        {  
+            printf(" ");  
+        }  
+        for( k=1;k<=rows;k++)  
+        {  
+            printf("*");  
+        }  
+        printf("\n");  
+    }  
+    return 0;  
+}
+17. Hollow Rhombus Star Pattern in C
+#include<stdio.h>
+  
+int main()  
+{  
+    int rows,i,j,k;  
+    printf("Enter rows: ");  
+    scanf("%d",&rows);  
+    for( i=rows;i>=1;i--)  
+    {  
+        for( j=1;j<=i-1;j++)  
+        {  
+            printf(" ");  
+        }  
+        for( k=1;k<=rows;k++)  
+        {  
+           if(i==1 || i==rows || k==1 || k==rows)  
+            printf("*");  
+            else  
+            printf(" ");   
+        }  
+        printf("\n");  
+    }  
+    return 0;  
+}
+18. Solid Mirrored Rhombus Pattern in C
+#include<stdio.h>   
+int main()  
+{  
+    int rows,i,j,k;  
+    printf("Enter rows: ");  
+    scanf("%d",&rows);  
+    for( i=1;i<=rows;i++)  
+    {  
+        for( j=1;j<i;j++)  
+        {  
+            printf(" ");  
+        }  
+        for( k=1;k<=rows;k++)  
+        {  
+           printf("*");  
+              
+        }  
+        printf("\n");  
+    }  
+    return 0;  
+}
+19. Hollow Mirrored Rhombus Star Pattern
+#include  <stdio.h> 
+int main()  
+{  
+    int rows, i,j,k;  
+    printf("Enter rows: ");  
+    scanf("%d",&rows);  
+    for( i=1;i<=rows;i++)  
+    {  
+        for( j=1;j<i;j++)  
+        {  
+            printf(" ");  
+        }  
+        for( k=1;k<=rows;k++)  
+        {  
+         if(i==1 || i==rows || k==1 || k==rows)  
+           printf("*");  
+            else  
+            printf(" ");  
+        }  
+        printf("\n");  
+    }  
+    return 0;  
+}
+20. Pascal's Triangle in C
+#include <stdio.h>
+int main() {
+   int i, s, r, k = 0, c1 = 0, c2 = 0;
+   printf("Enter rows(r): ");
+   scanf("%d", &r);
+   for (i = 1; i <= r; ++i) {
+      for (s = 1; s <= r - i; ++s) {
+         printf("  ");
+         ++c1;
+      }
+      while (k != 2 * i - 1) {
+         if (c1 <= r - 1) {
+            printf("%d ", i + k);
+            ++c1;
+         } else {
+            ++c2;
+            printf("%d ", (i + k - 2 * c2));
+         }
+         ++k;
+      }
+      c2 = c1 = k = 0;
+      printf("\n");
+   }
+   return 0;
+}
+21. Floyd's Triangle in C
+#include<stdio.h> 
+int main() {
+   int rows, i, j, n = 1;
+   printf("Enter rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; i++) {
+      for (j = 1; j <= i; ++j) {
+         printf("%d ", n);
+         ++n;
+      }
+      printf("\n");
+   }
+   return 0;
+}
+22. Half Pyramid of Alphabets in C
+#include<stdio.h> 
+int main() {
+   int i, j;
+   char input, alphabet = 'A';
+   printf("Enter an uppercase character you want to print in the last row: ");
+   scanf("%c", &input);
+   for (i = 1; i <= (input - 'A' + 1); ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("%c ", alphabet);
+      }
+      ++alphabet;
+      printf("\n");
+   }
+   return 0;
+}
+23. Palindrome Half Pyramid Patterns in Alphabets
+#include<stdio.h>
+  
+int main() {
+   int i, j, rows, c=0;
+    
+   printf("Enter rows: ");
+   scanf("%d", &rows);
+     
+   for (i = 1; i <= 2*rows; i=i+2) {
+      for (j = 1; j <= i; j++) {
+       printf("%c", 'A'+c);
+       if(j <= i/2)
+           c++;
+        else 
+           c--;
+      }
+      c = 0;
+      printf("\n");
+   }
+   return(0);
+}
+24. Palindrome Half Pyramid Pattern Using Numbers in C
+#include <stdio.h>
+  
+int main() {
+   int i, j,k, rows, c=0;
+    
+   printf("Enter rows: ");
+   scanf("%d", &rows);
+     
+   for(i=1; i<=rows; i++)
+   {
+   	for(j=1;j<=i;j++) { printf("%d",j); } for(k=i-1;k>=1;k--)
+	{
+		printf("%d",k);
+	}
+	printf("\n");
+   }
+   return(0);
+}
+25. Hour Glass Star Pattern in C
+#include<stdio.h>
+
+int main()
+{
+	 int n, i,j,k;  
+  	 printf("Enter the width of the HourGlass: ");  
+  	 scanf("%d",&n); 
+    for (i = 1; i <= n; i++) 
+        for (k = 1; k < i; k++)
+            printf(" ");
+        for (j = i; j <= n; j++){
+			printf("*");
+						printf(" ");
+		}
+        printf("\n");
+    }
+ 
+      for (i = n - 1; i >= 1; i--)
+	 {
+ 
+        for (k = 1; k < i; k++)
+           printf(" ");
+         
+         for (j = i; j <= n; j++){
+        	printf("*"); 
+        	//space after every start print
+        	printf(" ");
+		}
+                  
+ 
+        printf("\n");
+    }
+    return 0;
+}
+ Write a C program that accepts two item’s weight (floating points' values ) and number of purchase (floating points' values) and calculate the average value of the items.  
+Test Data :
+Weight - Item1: 15
+No. of item1: 5
+Weight - Item2: 25
+No. of item2: 4
+Expected Output:
+Average Value = 19.444444
+
+
+#include <stdio.h>
+
+int main() {
+    float weight1, weight2;
+    float num1, num2;
+    float totalWeight, totalItems, averageWeight;
+
+    printf("Enter weight of Item 1: ");
+    scanf("%f", &weight1);
+    printf("Enter number of Item 1: ");
+    scanf("%f", &num1);
+    printf("Enter weight of Item 2: ");
+    scanf("%f", &weight2);
+    printf("Enter number of Item 2: ");
+    scanf("%f", &num2);
+
+    totalWeight = (weight1 * num1) + (weight2 * num2);
+    totalItems = num1 + num2;
+    averageWeight = totalWeight / totalItems;
+
+    printf("Average Value = %.6f\n", averageWeight);
+
+    return 0;
+}
+Write a C program that accepts an employee's ID, total worked hours of a month and the amount he received per hour. Print the employee's ID and salary (with two decimal places) of a particular month.  
+Test Data :
+Input the Employees ID(Max. 10 chars): 0342
+Input the working hrs: 8
+Salary amount/hr: 15000
+Expected Output:
+Employees ID = 0342
+Salary = U$ 120000.00
+#include <stdio.h>
+
+int main() {
+    char employeeID[11];
+    float workedHours, amountPerHour, salary;
+
+    printf("Input the Employee's ID (Max. 10 chars): ");
+    scanf("%10s", employeeID);
+
+    printf("Input the working hours: ");
+    scanf("%f", &workedHours);
+
+    printf("Salary amount/hr: ");
+    scanf("%f", &amountPerHour);
+
+    salary = workedHours * amountPerHour;
+
+    printf("Employee ID = %s\n", employeeID);
+    printf("Salary = U$ %.2f\n", salary);
+
+    return 0;
+}
+Write a C program to calculate a bike’s average consumption from the given total distance (integer value) traveled (in km) and spent fuel (in liters, float number – 2 decimal point).  
+Test Data :
+Input total distance in km: 350
+Input total fuel spent in liters: 5
+Expected Output:
+Average consumption (km/lt) 70.000
+#include <stdio.h>
+
+int main() {
+    int distance;
+    float fuel, avgConsumption;
+
+    printf("Input total distance in km: ");
+    scanf("%d", &distance);
+
+    printf("Input total fuel spent in liters: ");
+    scanf("%f", &fuel);
+
+    avgConsumption = distance / fuel;
+
+    printf("Average consumption (km/lt) %.3f\n", avgConsumption);
+
+    return 0;
+}
+-Write a C program to convert specified days into years, weeks and days. 
+Note: Ignore leap year.
+
+Test Data :
+Number of days : 1329
+Expected Output :
+Years: 3
+Weeks: 33
+Days: 3
+#include <stdio.h>
+
+int main() {
+    int totalDays;
+    int years, weeks, days;
+
+    printf("Number of days: ");
+    scanf("%d", &totalDays);
+
+    years = totalDays / 365;
+    totalDays = totalDays % 365;
+
+    weeks = totalDays / 7;
+    days = totalDays % 7;
+
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d\n", days);
+
+    return 0;
+}
+
+-Write a C program to convert a given integer (in seconds) to hours, minutes and seconds.   
+Test Data :
+Input seconds: 25300
+Expected Output:
+There are:
+H:M:S - 7:1:40
+#include <stdio.h>
+
+int main() {
+    int totalSeconds;
+    int hours, minutes, seconds;
+
+    printf("Input seconds: ");
+    scanf("%d", &totalSeconds);
+
+    hours = totalSeconds / 3600;
+    totalSeconds = totalSeconds % 3600;
+
+    minutes = totalSeconds / 60;
+    seconds = totalSeconds % 60;
+
+    printf("There are:\n");
+    printf("H:M:S - %d:%d:%d\n", hours, minutes, seconds);
+
+    return 0;
+}
+-Write a C program to convert a given integer (in days) to years, months and days, assumes that all months have 30 days and all years have 365 days.   
+Test Data :
+Input no. of days: 2535
+Expected Output:
+6 Year(s)
+11 Month(s)
+15 Day(s)
+#include <stdio.h>
+
+int main() {
+    int totalDays;
+    int years, months, days;
+
+    printf("Input number of days: ");
+    scanf("%d", &totalDays);
+
+    years = totalDays / 365;
+    totalDays = totalDays % 365;
+
+    months = totalDays / 30;
+    days = totalDays % 30;
+
+    printf("%d Year(s)\n", years);
+    printf("%d Month(s)\n", months);
+    printf("%d Day(s)\n", days);
+
+    return 0;
+}
+-Write a C program to find all numbers which are dividing by 7 and the remainder is equal to 2 or 3 between two given integer numbers.   
+Test Data :
+Input the first integer: 25
+Input the second integer: 45
+Expected Output:
+30
+31
+37
+38
+44
+#include <stdio.h>
+
+int main() {
+    int first, second;
+
+    printf("Input the first integer: ");
+    scanf("%d", &first);
+
+    printf("Input the second integer: ");
+    scanf("%d", &second);
+
+    printf("Numbers between %d and %d divisible by 7 with remainder 2 or 3:\n", first, second);
+
+    for (int i = first; i <= second; i++) {
+        if (i % 7 == 2 || i % 7 == 3) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
+- Write a C program that accepts three integers and find the maximum of three.   
+Test Data :
+Input the first integer: 25
+Input the second integer: 35
+Input the third integer: 15
+Expected Output:
+Maximum value of three integers: 35
+#include <stdio.h>
+
+int main() {
+    int first, second;
+
+    printf("Input the first integer: ");
+    scanf("%d", &first);
+
+    printf("Input the second integer: ");
+    scanf("%d", &second);
+
+    printf("Numbers between %d and %d divisible by 7 with remainder 2 or 3:\n", first, second);
+
+    for (int i = first; i <= second; i++) {
+        if (i % 7 == 2 || i % 7 == 3) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
+- Write a C program to calculate a bike’s average consumption from the given total distance (integer value) traveled (in km) and spent fuel (in liters, float number – 2 decimal point).   
+Test Data :
+Input total distance in km: 350
+Input total fuel spent in liters: 5
+Expected Output:
+Average consumption (km/lt) 70.000
+   
+#include <stdio.h>
+
+int main() {
+    int distance;
+    float fuel, average;
+
+    printf("Input total distance in km: ");
+    scanf("%d", &distance);
+
+    printf("Input total fuel spent in liters: ");
+    scanf("%f", &fuel);
+
+    average = distance / fuel;
+
+    printf("Average consumption (km/lt) %.3f\n", average);
+
+    return 0;
+}
+- Write a C program to calculate the distance between the two points.   
+Test Data :
+Input x1: 25
+Input y1: 15
+Input x2: 35
+Input y2: 10
+Expected Output:
+Distance between the said points: 11.1803
+#include <stdio.h>
+int main() {
+    int x1, y1, x2, y2;
+    double distance;
+
+    printf("Input x1: ");
+    scanf("%d", &x1);
+
+    printf("Input y1: ");
+    scanf("%d", &y1);
+
+    printf("Input x2: ");
+    scanf("%d", &x2);
+
+    printf("Input y2: ");
+    scanf("%d", &y2);
+    distance = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    printf("Distance between the said points: %.4f\n", distance);
+
+    return 0;
+}
+- Write a C program that accepts 4 integers p, q, r, s from the user where q, r and s are positive and p is even. If q is greater than r and s is greater than p and if the sum of r and s is greater than the sum of p and q print "Correct values", otherwise print "Wrong values".   
+Test Data :
+Input the second integer: 35
+Input the third integer: 15
+Input the fourth integer: 46
+Expected Output:
+Wrong values
+
+#include <stdio.h>
+
+int main() {
+    int p, q, r, s;
+
+    printf("Input the first integer (p): ");
+    scanf("%d", &p);
+
+    printf("Input the second integer (q): ");
+    scanf("%d", &q);
+
+    printf("Input the third integer (r): ");
+    scanf("%d", &r);
+
+    printf("Input the fourth integer (s): ");
+    scanf("%d", &s);
+    if (p % 2 == 0 && q > 0 && r > 0 && s > 0) {
+        if (q > r && s > p && (r + s) > (p + q)) {
+            printf("Correct values\n");
+        } else {
+            printf("Wrong values\n");
+        }
+    } else {
+        printf("Wrong values\n");
+    }
+
+    return 0;
+}
+- Write a C program to print the roots of Bhaskara’s formula from the given three floating numbers. Display a message if it is not possible to find the roots.   
+Test Data :
+Input the first number(a): 25
+Input the second number(b): 35
+Input the third number(c): 12
+Expected Output:
+Root1 = -0.60000
+Root2 = -0.80000
+#include <stdio.h>
+int main() {
+    float a, b, c;
+    float discriminant, root1, root2;
+
+    printf("Input the first number (a): ");
+    scanf("%f", &a);
+
+    printf("Input the second number (b): ");
+    scanf("%f", &b);
+
+    printf("Input the third number (c): ");
+    scanf("%f", &c);
+    discriminant = b * b - 4 * a * c;
+    if (discriminant < 0) {
+        printf("The roots are not real numbers.\n");
+    } else {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("Root1 = %.5f\n", root1);
+        printf("Root2 = %.5f\n", root2);
+    }
+
+    return 0;
+}
+- Write a C program that reads an integer and check the specified range where it belongs. Print an error message if the number is negative and greater than 80.   
+Test Data :
+Input an integer: 15
+Expected Output:
+Range [0, 20]
+   
+#include <stdio.h>
+int main() {
+    int number;
+    printf("Input an integer: ");
+    scanf("%d", &number);
+    if (number < 0 || number > 80) {
+        printf("Error: The number is either negative or greater than 80.\n");
+    } else {
+        if (number >= 0 && number <= 20) {
+            printf("Range [0, 20]\n");
+        } else if (number >= 21 && number <= 40) {
+            printf("Range [21, 40]\n");
+        } else if (number >= 41 && number <= 60) {
+            printf("Range [41, 60]\n");
+        } else if (number >= 61 && number <= 80) {
+            printf("Range [61, 80]\n");
+        }
+    }
+
+    return 0;
+}
+- Write a C program that read 5 numbers and sum of all odd values between them.   
+Test Data :
+Input the first number: 11
+Input the second number: 17
+Input the third number: 13
+Input the fourth number: 12
+Input the fifth number: 5
+Expected Output:
+Sum of all odd values: 46
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    int sum = 0;
+    for (int i = 0; i < 5; i++) {
+        printf("Input number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+    }
+    for (int i = 0; i < 5; i++) {
+        if (numbers[i] % 2 != 0) { // Check if the number is odd
+            sum += numbers[i];
+        }
+    }
+    printf("Sum of all odd values: %d\n", sum);
+
+    return 0;
+}
+- Write a C program that reads three floating values and check if it is possible to make a triangle with them. Also calculate the perimeter of the triangle if the said values are valid.   
+Test Data :
+Input the first number: 25
+Input the second number: 15
+Input the third number: 35
+Expected Output:
+#include <stdio.h>
+
+int main() {
+    float a, b, c;
+    printf("Input the first number: ");
+    scanf("%f", &a);
+
+    printf("Input the second number: ");
+    scanf("%f", &b);
+
+    printf("Input the third number: ");
+    scanf("%f", &c);
+
+    if ((a + b > c) && (a + c > b) && (b + c > a)) {
+        float perimeter = a + b + c;
+        printf("The values can form a triangle.\n");
+        printf("Perimeter of the triangle: %.2f\n", perimeter);
+    } else {
+        printf("The values cannot form a triangle.\n");
+    }
+
+    return 0;
+}
+- Write a C program that reads two integers and checks whether they are multiplied or not.   
+Test Data :
+Input the first number: 5
+Input the second number: 15
+Expected Output:
+Multiplied!
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    printf("Input the first number: ");
+    scanf("%d", &num1);
+
+    printf("Input the second number: ");
+    scanf("%d", &num2);
+    if ((num1 % num2 == 0) || (num2 % num1 == 0)) {
+        printf("Multiplied!\n");
+    } else {
+        printf("Not multiplied!\n");
+    }
+
+    return 0;
+}
+- Write a C program that reads an integer between 1 and 12 and print the month of the year in English.   
+Test Data :
+Input a number between 1 to 12 to get the month name: 8
+Expected Output:
+August
+   
+#include <stdio.h>
+
+int main() {
+    int month;
+    printf("Input a number between 1 to 12 to get the month name: ");
+    scanf("%d", &month);
+    switch (month) {
+        case 1:
+            printf("January\n");
+            break;
+        case 2:
+            printf("February\n");
+            break;
+        case 3:
+            printf("March\n");
+            break;
+        case 4:
+            printf("April\n");
+            break;
+        case 5:
+            printf("May\n");
+            break;
+        case 6:
+            printf("June\n");
+            break;
+        case 7:
+            printf("July\n");
+            break;
+        case 8:
+            printf("August\n");
+            break;
+        case 9:
+            printf("September\n");
+            break;
+        case 10:
+            printf("October\n");
+            break;
+        case 11:
+            printf("November\n");
+            break;
+        case 12:
+            printf("December\n");
+            break;
+        default:
+            printf("Invalid input! Please enter a number between 1 and 12.\n");
+            break;
+    }
+
+    return 0;
+}
+- Write a C program that prints all even numbers between 1 and 50 (inclusive).   
+Test Data :
+Even numbers between 1 to 50 (inclusive):
+Expected Output:
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50
+   
+#include <stdio.h>
+
+int main() {
+    printf("Even numbers between 1 to 50 (inclusive):\n");
+
+    for (int i = 1; i <= 50; i++) {
+        if (i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+- Write a C program that read 5 numbers and counts the number of positive numbers and negative numbers.   
+Test Data :
+Input the first number: 5
+Input the second number: -4
+Input the third number: 10
+Input the fourth number: 15
+Input the fifth number: -1
+Expected Output:
+Number of positive numbers: 3
+Number of negative numbers: 2
+   
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    int positive_count = 0, negative_count = 0;
+    for (int i = 0; i < 5; i++) {
+        printf("Input number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+        if (numbers[i] > 0) {
+            positive_count++;
+        } else if (numbers[i] < 0) {
+            negative_count++;
+        }
+    }
+
+    printf("Number of positive numbers: %d\n", positive_count);
+    printf("Number of negative numbers: %d\n", negative_count);
+
+    return 0;
+}
+- Write a C program that read 5 numbers and counts the number of positive numbers and print the average of all positive values.   
+Test Data :
+Input the first number: 5
+Input the second number: 8
+Input the third number: 10
+Input the fourth number: -5
+Input the fifth number: 25
+Expected Output:
+Number of positive numbers: 4
+Average value of the said positive numbers: 12.00
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    int positive_count = 0;
+    int sum_positive = 0;
+    for (int i = 0; i < 5; i++) {
+        printf("Input number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+        if (numbers[i] > 0) {
+            positive_count++;
+            sum_positive += numbers[i];
+        }
+    }
+    double average = 0.0;
+    if (positive_count > 0) {
+        average = (double)sum_positive / positive_count;
+    }
+
+    printf("Number of positive numbers: %d\n", positive_count);
+    printf("Average value of the said positive numbers: %.2f\n", average);
+
+    return 0;
+}
+- Write a C program that read 5 numbers and sum of all odd values between them.   
+Test Data :
+Input the first number: 5
+Input the second number: 7
+Input the third number: 9
+Input the fourth number: 10
+Input the fifth number: 13
+Expected Output:
+Sum of all odd values: 34
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    int sum_odd = 0;
+    for (int i = 0; i < 5; i++) {
+        printf("Input number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+        if (numbers[i] % 2 != 0) {
+            sum_odd += numbers[i];
+        }
+    }
+    printf("Sum of all odd values: %d\n", sum_odd);
+
+    return 0;
+}
+- Write a C program to find and print the square of each one of the even values from 1 to a specified value.   
+Test Data :
+List of square of each one of the even values from 1 to a 4 :
+Expected Output:
+2^2 = 4
+4^2 = 16
+#include <stdio.h>
+
+int main() {
+    int upper_limit;
+
+    printf("Enter the upper limit value: ");
+    scanf("%d", &upper_limit);
+
+    printf("List of square of each one of the even values from 1 to %d:\n", upper_limit);
+    for (int i = 2; i <= upper_limit; i += 2) { 
+        int square = i * i;
+        printf("%d^2 = %d\n", i, square);
+    }
+
+    return 0;
+}
+- Write a C program to check whether a given integer is positive even, negative even, positive odd or negative odd. Print even if the number is 0.   
+Test Data :
+Input an integer: 13
+Expected Output:
+Positive Odd
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Input an integer: ");
+    scanf("%d", &number);
+    if (number == 0) {
+        printf("Even\n");
+    } else if (number > 0) {
+        if (number % 2 == 0) {
+            printf("Positive Even\n");
+        } else {
+            printf("Positive Odd\n");
+        }
+    } else {
+        if (number % 2 == 0) {
+            printf("Negative Even\n");
+        } else {
+            printf("Negative Odd\n");
+        }
+    }
+
+    return 0;
+}
+
+
+
+- Write a C program to print all numbers between 1 to 100 which divided by a specified number and the remainder will be 3.   
+Test Data :
+Input an integer: 25
+Expected Output:
+3
+28
+53
+78
+ 
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Input an integer: ");
+    scanf("%d", &number);
+    if (number == 0) {
+        printf("Even\n");
+    } else if (number > 0) {
+        if (number % 2 == 0) {
+            printf("Positive Even\n");
+        } else {
+            printf("Positive Odd\n");
+        }
+    } else {
+        if (number % 2 == 0) {
+            printf("Negative Even\n");
+        } else {
+            printf("Negative Odd\n");
+        }
+    }
+
+    return 0;
+}
